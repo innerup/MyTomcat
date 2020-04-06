@@ -1,5 +1,8 @@
 package servlet;
 
+/**
+ * 抽象类,为servlet的基类
+ */
 public abstract class AbstractServlet {
 
 

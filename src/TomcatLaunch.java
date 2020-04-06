@@ -1,6 +1,3 @@
-package cat;
-
-
 import config.ServletConfig;
 import config.ServletConfigMapping;
 import servlet.Request;
@@ -15,17 +12,17 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyTomcat {
+public class TomcatLaunch {
 
     private int port = 8888;
 
     private Map<String,Class<Servlet>> stringClassMap = new HashMap<>();//设置map集合存放servlet对象与反射来的servlet对象
 
-    public MyTomcat() {
+    public TomcatLaunch() {
 
     }
 
-    public MyTomcat(int port) {
+    public TomcatLaunch(int port) {
         this.port = port;
     }
 
@@ -60,7 +57,7 @@ public class MyTomcat {
         servlet.service(request,response);//将请求转发给servlet
     }
 
-    public void select(Request request,Response response) throws IOException, InstantiationException, IllegalAccessException {
+    public void select(Request request,Response response) throws IOException, InstantiationException, IllegalAccessException {//用来查询访问静态资源或者是访问servlet
         if(request.getUrl().equals("/")){//主界面时，读取welcome.html文件
 
             response.writeHtml("welcome.html");
@@ -92,7 +89,7 @@ public class MyTomcat {
             Request request = new Request(inputStream);
             Response response = new Response(outputStream);
 
-            this.select(request,response);//
+            this.select(request,response);
 
             inputStream.close();
             outputStream.close();
@@ -102,7 +99,7 @@ public class MyTomcat {
     }
 
     public static void main(String[] args) {
-        MyTomcat tomcat = new MyTomcat();
+        TomcatLaunch tomcat = new TomcatLaunch();
         try {
             tomcat.start();
         }catch (Exception e){

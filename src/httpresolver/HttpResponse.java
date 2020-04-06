@@ -1,8 +1,11 @@
-package cat;
+package httpresolver;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * 用来在返回response时添加响应头信息
+ */
 public class HttpResponse {
 
     public  static void response404(OutputStream output) throws IOException {

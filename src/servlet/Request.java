@@ -4,6 +4,9 @@ package servlet;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * request实体类，用来接受request请求，并解析出此请求的url和请求的类型(get,post)
+ */
 public class Request {
 
     private String url;
@@ -18,7 +21,7 @@ public class Request {
         }
         byte[] bytes = new byte[inputStream.available()];
         inputStream.read(bytes);
-        //System.out.println(new String(bytes));
+        System.out.println(new String(bytes));
         this.parse(new String(bytes));
 
     }

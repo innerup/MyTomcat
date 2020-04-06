@@ -1,10 +1,13 @@
 package servlet;
 
 
-import cat.HttpResponse;
+import httpresolver.HttpResponse;
 
 import java.io.*;
 
+/**
+ * 从web文件夹下获取的html文件会通过response处理返回为一个response响应
+ */
 public class Response {
 
     private OutputStream outputStream;

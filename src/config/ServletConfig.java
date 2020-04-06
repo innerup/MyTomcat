@@ -1,5 +1,8 @@
 package config;
 
+/**
+ * 模拟servlet配置文件实体类，即解析servlet与http请求url的对应关系
+ */
 public class ServletConfig {
 
     private String name;//模拟servlet-name
